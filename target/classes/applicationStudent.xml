@@ -5,22 +5,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-<!-- 밑에 console창 namespaces에서 context추가 -->
-<!-- 해당하는 파일에서 값을 가져옴 -->
-<context:property-placeholder location="classpath:print.properties"/>
-<bean id="pS01" class="com.care.di_test.PrintString"/>
-<bean id="pb" class="com.care.di_test.PrintBean">
-<property name="ps" ref="pS01"/>
-<property name="print" value="${print.name}" />
+<context:property-placeholder location="classpath:student.properties"/>
+<bean id="pc01" class="com.care.di_test03.PrintClass"/>
+<bean id="sc01" class="com.care.di_test03.StudentClass">
+<property name="pc" ref="pc01">
 
-
-
-
-
+</property>
+<constructor-arg value="홍길동"></constructor-arg>
+<property name="food">
+<list>
+<value>${st.food1}</value>
+<value>${st.food2}</value>
+<value>${st.food3}</value>
+</list>
+</property>
 </bean>
-
-
-
-
 
 </beans>

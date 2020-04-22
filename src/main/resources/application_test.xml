@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-
-
+<!-- 밑에 console창 namespaces에서 context추가 -->
+<!-- 해당하는 파일에서 값을 가져옴 -->
+<context:property-placeholder location="classpath:print.properties"/>
 <bean id="pS01" class="com.care.di_test.PrintString"/>
 <bean id="pb" class="com.care.di_test.PrintBean">
 <property name="ps" ref="pS01"/>
-<property name="print" value="123"/>
+<property name="print" value="${print.name}" />
 
 
 

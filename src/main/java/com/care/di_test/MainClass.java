@@ -10,9 +10,9 @@ public class MainClass {
 		GenericXmlApplicationContext ctx=
 				new GenericXmlApplicationContext(config);
 		PrintBean pt=ctx.getBean("pb",PrintBean.class);
-		System.out.println("숫자를 입력해주세요");
+		//System.out.println("숫자를 입력해주세요");
 		
-		pt.setPrint(new Scanner(System.in).next());
+		//pt.setPrint(new Scanner(System.in).next());
 		pt.PrintString();
 		
 	}
